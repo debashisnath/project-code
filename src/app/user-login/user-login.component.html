@@ -1,0 +1,134 @@
+<!--Navbar-->
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-dark unique-color"
+  [containerInside]="false"
+>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand
+    ><a class="navbar-brand" href="#">Carrer Path</a></mdb-navbar-brand
+  >
+
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect
+          >Home<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a
+          dropdownToggle
+          mdbWavesEffect
+          type="button"
+          class="nav-link dropdown-toggle waves-light"
+          mdbWavesEffect
+        >
+          More<span class="caret"></span
+        ></a>
+        <div
+          *dropdownMenu
+          class="dropdown-menu dropdown dropdown-primary"
+          role="menu"
+        >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">About</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Contact</a
+          >
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#"
+            >Something else here</a
+          >
+        </div>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fab icon="google-plus"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <!-- <a class="dropdown-item" href="#">Log In</a> -->
+              <a class="dropdown-item" routerLink="/register" href="#"
+                >Register</a
+              >
+              <a class="dropdown-item" href="#">Refer</a>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->
+
+<div class="card-body" id="body">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="formGroup">
+        <p>
+          <mat-form-field>
+            <mat-label>Email Id</mat-label>
+            <input
+              matInput
+              formControlName="emailId"
+              [(ngModel)]="emailId"
+              placeholder="E-mail"
+            />
+          </mat-form-field>
+          <mat-form-field class="hight">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              type="password"
+              formControlName="password"
+              [(ngModel)]="password"
+              placeholder="Password"
+            />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <!-- <mat-form-field>
+    <input type="password" matInput placeholder="Password" >
+  </mat-form-field> -->
+        </p>
+
+        <!-- <p *ngIf="error" class="error">
+  {{ error }}
+</p> -->
+
+        <div class="button">
+          <button type="submit" mat-stroked-button mat-button (click)="onSubmit()">Login</button>
+        </div>
+        <p>
+          Not a member?
+          <a href="" routerLink="/register">Register</a>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<app-footer></app-footer>
